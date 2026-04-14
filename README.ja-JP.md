@@ -4,8 +4,6 @@
 
 [English](README.md) · **日本語** · [한국어](README.ko-KR.md)
 
-<img src="assets/hero.svg" alt="npx @orbweva/academy — ORBWEVA Academyインストーラー" width="720"/>
-
 ファウンダーに必要なORBWEVA Claude Codeスキルを、1つのコマンドでインストール。
 
 ```
