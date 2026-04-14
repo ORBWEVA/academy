@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "skillRepos": {
+    "secure-setup":      { "repo": "ORBWEVA/secure-setup",      "skills": ["secure-setup"] },
+    "orbweva-method":    { "repo": "ORBWEVA/orbweva-method",    "skills": ["core"] },
+    "resume-skill":      { "repo": "ORBWEVA/resume-skill",      "skills": ["resume"] },
+    "founder-discovery": { "repo": "ORBWEVA/founder-discovery", "skills": ["discovery"] },
+    "dt-skill":          { "repo": "ORBWEVA/dt-skill",          "skills": ["design-thinking"] },
+    "founder-metrics":   { "repo": "ORBWEVA/founder-metrics",   "skills": ["startup-metrics"] },
+    "founder-pitch":     { "repo": "ORBWEVA/founder-pitch",     "skills": ["pitch"] },
+    "founder-ops":       { "repo": "ORBWEVA/founder-ops",       "skills": ["hiring", "legal-essentials", "retention"] },
+    "gtm-skills":        { "repo": "ORBWEVA/gtm-skills",        "skills": ["geo", "gtm-launch", "seo-toolkit"] },
+    "solo-skills":       { "repo": "ORBWEVA/solo-skills",       "skills": ["solo"] },
+    "solo-agents":       { "repo": "ORBWEVA/solo-agents",       "skills": ["agents"] },
+
+    "loka-pack":         { "repo": "ORBWEVA/loka-pack",         "skills": ["loka-integration"],             "status": "planned" },
+    "marketing-pack":    { "repo": "ORBWEVA/marketing-pack",    "skills": ["marketing-agency"],             "status": "planned" },
+    "web-video-pack":    { "repo": "ORBWEVA/web-video-pack",    "skills": ["web-design", "video-editing"],  "status": "planned" }
+  },
+  "tracks": {
+    "accelerator": {
+      "label": "Accelerator",
+      "tagline": "12-week cohort program — zero-to-one founders",
+      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-discovery", "dt-skill", "founder-metrics", "gtm-skills"],
+      "optional": ["founder-pitch", "founder-ops", "solo-skills", "solo-agents"]
+    },
+    "course": {
+      "label": "Course",
+      "tagline": "Self-paced founder fundamentals",
+      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-discovery", "dt-skill"],
+      "optional": ["founder-metrics", "gtm-skills"]
+    },
+    "mentoring": {
+      "label": "Mentoring",
+      "tagline": "1:1 operator support for existing businesses",
+      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-metrics", "founder-ops"],
+      "optional": ["founder-pitch", "gtm-skills", "solo-skills", "solo-agents"]
+    },
+    "founder": {
+      "label": "Founder",
+      "tagline": "Lean founder base — for partner-delivered programs (e.g. Headswitch)",
+      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-discovery", "dt-skill"],
+      "optional": ["founder-metrics", "founder-pitch", "gtm-skills"]
+    },
+    "full": {
+      "label": "Full Academy",
+      "tagline": "All 11 ORBWEVA skill repos — no tradeoffs",
+      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-discovery", "dt-skill", "founder-metrics", "founder-pitch", "founder-ops", "gtm-skills", "solo-skills", "solo-agents"],
+      "optional": []
+    }
+  },
+  "packs": {
+    "loka": {
+      "label": "Loka / LoLA",
+      "tagline": "Build a business on the Loka living-textbook + LoLA avatar platform",
+      "required": ["loka-pack"],
+      "optional": []
+    },
+    "marketing": {
+      "label": "Marketing Agency",
+      "tagline": "Run a one-person (or small team) marketing agency",
+      "required": ["marketing-pack"],
+      "optional": ["solo-skills", "solo-agents"]
+    },
+    "web-video": {
+      "label": "Web + Video Studio",
+      "tagline": "Web design + video editing studio",
+      "required": ["web-video-pack"],
+      "optional": ["solo-skills"]
+    }
+  },
+  "mcpServers": {
+    "supabase":   { "cmd": "npx -y @supabase/mcp-server-supabase",       "envKey": "SUPABASE_ACCESS_TOKEN", "required": true },
+    "context7":   { "cmd": "npx -y @upstash/context7-mcp",               "envKey": null,                    "required": true },
+    "playwright": { "cmd": "npx -y @playwright/mcp",                     "envKey": null,                    "required": false },
+    "memory":     { "cmd": "npx -y @modelcontextprotocol/server-memory", "envKey": null,                    "required": false }
+  }
+}
