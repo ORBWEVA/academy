@@ -5,21 +5,22 @@ import { banner } from './banner.js';
 import { confirm, select } from './prompts.js';
 import { detectOS } from './os.js';
 import { installSkills } from './install.js';
-import { printCliGuidance } from './cli-tools.js';
-import { printMcpGuidance } from './mcp.js';
+import { runCliSetup } from './cli-tools.js';
+import { runMcpSetup } from './mcp.js';
 import { c } from './color.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const manifest = JSON.parse(readFileSync(join(__dirname, '..', 'manifest.json'), 'utf8'));
 
 function parseArgs(argv) {
-  const flags = { global: false, local: false, yes: false, skillsOnly: false, dryRun: false, track: null, packs: [] };
+  const flags = { global: false, local: false, yes: false, skillsOnly: false, dryRun: false, noRun: false, track: null, packs: [] };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--global' || a === '-g') flags.global = true;
     else if (a === '--local' || a === '-l') flags.local = true;
     else if (a === '--yes' || a === '-y') flags.yes = true;
     else if (a === '--skills-only') flags.skillsOnly = true;
+    else if (a === '--no-run') flags.noRun = true;
     else if (a === '--dry-run') flags.dryRun = true;
     else if (a === '--help' || a === '-h') { printHelp(); process.exit(0); }
     else if (a === '--track' || a === '-t') flags.track = argv[++i];
@@ -53,9 +54,10 @@ Options:
   -p, --pack <name>    Add a specialization pack (repeatable)
   -g, --global         Install to ~/.claude/skills (all projects)
   -l, --local          Install to ./.claude/skills (current project only)
-  -y, --yes            Accept defaults — install all required skills, no prompts
-      --skills-only    Skip MCP and CLI-tool guidance
-      --dry-run        Show what would be installed, don't touch disk
+  -y, --yes            Accept all defaults and run all CLI/MCP commands — no prompts
+      --skills-only    Install skills only; skip CLI tools + MCP setup entirely
+      --no-run         Print CLI / MCP commands (don't run them), skills still install
+      --dry-run        Show plan, touch nothing
   -h, --help           Show this help
 
 Examples:
@@ -191,13 +193,15 @@ export async function run(argv) {
 
   await installSkills(selectedRepos, scope, { dryRun: flags.dryRun });
 
-  if (flags.skillsOnly) {
-    console.log(`\n${c.green('✓')} Skills installed. Open Claude Code to use them.`);
+  if (flags.skillsOnly || flags.dryRun) {
+    console.log(`\n${c.green('✓')} Skills ${flags.dryRun ? 'would be' : 'are'} installed. Open Claude Code to use them.`);
     return;
   }
 
-  printCliGuidance(os);
-  printMcpGuidance(manifest.mcpServers);
+  // Interactive CLI + MCP setup (or print-only if --no-run)
+  const interactive = !flags.noRun;
+  await runCliSetup(os, { assumeYes: flags.yes, interactive });
+  await runMcpSetup(manifest.mcpServers, { assumeYes: flags.yes, interactive });
 
   console.log(`\n${c.green('✓')} Setup complete. Open Claude Code and try ${c.cyan('/discovery:help')} to verify.\n`);
 }

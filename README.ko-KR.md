@@ -117,8 +117,9 @@ npx @orbweva/academy@latest
 | `-p, --pack <name>` | 스페셜라이제이션 팩 추가 (반복 가능) |
 | `-g, --global` | `~/.claude/skills/`에 설치 |
 | `-l, --local` | `./.claude/skills/`에 설치 |
-| `-y, --yes` | 모든 기본값 수락, 선택 항목 전체 설치, 프롬프트 없음 |
-| `--skills-only` | 설치 후 CLI/MCP 가이던스 건너뛰기 |
+| `-y, --yes` | 모든 기본값 수락 + CLI/MCP 명령어도 모두 자동 실행, 프롬프트 없음 |
+| `--skills-only` | 스킬만 설치, CLI + MCP 설정은 완전히 건너뛰기 |
+| `--no-run` | CLI + MCP 명령어를 출력만 하고 실행하지 않음. 스킬은 설치됨. |
 | `--dry-run` | 예정 표시, 디스크 변경 없음 |
 | `-h, --help` | 도움말 표시 |
 

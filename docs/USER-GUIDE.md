@@ -80,9 +80,19 @@ Press `Enter`.
 ✓ Installed to /Users/you/.claude/skills
 ```
 
-### 7. Post-install guidance
+### 7. CLI tools
 
-The installer prints platform-specific commands for CLI tools and MCP servers. **You copy and run these manually** — the installer does not execute them for you. See [CLI-TOOLS.md](CLI-TOOLS.md) and [MCP-SERVERS.md](MCP-SERVERS.md).
+The installer lists the CLI tools for your OS (brew on macOS, winget+scoop on Windows, apt on Linux) and prompts `Run now? [Y/n]` per command. Approved commands execute live in your terminal with full output; interactive commands like `gh auth login` work because child processes inherit your terminal.
+
+Use `--yes` to auto-approve every CLI command. Use `--no-run` to print them without executing, then run them yourself. Use `--skills-only` to skip CLI + MCP entirely.
+
+See [CLI-TOOLS.md](CLI-TOOLS.md) for per-OS detail and gotchas (Windows admin/non-admin PowerShell, EBADENGINE warnings, etc).
+
+### 8. MCP servers
+
+Same pattern — prompt per `claude mcp add <name> <command>`, run the approved ones. Servers needing env vars (e.g. Supabase's `SUPABASE_ACCESS_TOKEN`) register fine without the variable; you set the env var later in whatever shell you launch Claude Code from.
+
+See [MCP-SERVERS.md](MCP-SERVERS.md) for full reference.
 
 ## Non-interactive mode
 

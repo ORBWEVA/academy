@@ -117,10 +117,13 @@ It re-clones each repo and overwrites existing skill folders. For air-gapped or 
 | `-p, --pack <name>` | Add a specialization pack (repeatable) |
 | `-g, --global` | Install to `~/.claude/skills/` |
 | `-l, --local` | Install to `./.claude/skills/` |
-| `-y, --yes` | Accept all defaults, install everything in the selection, no prompts |
-| `--skills-only` | Skip post-install CLI/MCP guidance |
+| `-y, --yes` | Accept all defaults AND auto-run every CLI/MCP command — no prompts |
+| `--skills-only` | Install skills only; skip CLI + MCP setup entirely |
+| `--no-run` | Print CLI + MCP commands (don't execute them). Skills still install. |
 | `--dry-run` | Show what would happen, touch nothing |
 | `-h, --help` | Show help |
+
+After skills install, the CLI prompts Y/n per CLI tool (brew/winget/scoop/npm/`gh auth login`) and per `claude mcp add` command, then runs the ones you approve. Use `--yes` to run them all silently; `--no-run` to see the commands without executing.
 
 ## Related docs
 

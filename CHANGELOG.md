@@ -4,8 +4,21 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-04-14
+
+### Added
+- **Auto-install for CLI tools and MCP servers.** After skills land, the installer now prompts Y/n per CLI command (brew/winget/scoop/npm, `gh auth login`, etc.) and per `claude mcp add`, then actually runs the ones you approve. Previously it only printed the commands.
+- `--no-run` flag for users who want the old print-only behavior.
+- `--yes` now auto-approves every CLI and MCP command in addition to skill choices.
+
 ### Changed
-- Re-licensed to dual MIT + CC BY-NC-SA 4.0 to match the broader ORBWEVA ecosystem. Code is MIT (permissive, contribution-friendly). Docs and prose are CC BY-NC-SA 4.0 (matches skill repos). Full details in `LICENSE` and `LICENSE-DOCS`.
+- `--skills-only` now fully skips the CLI + MCP section (previously it printed guidance and stopped).
+- Re-licensed to dual MIT + CC BY-NC-SA 4.0 to match the broader ORBWEVA ecosystem. Code is MIT; docs and prose are CC BY-NC-SA 4.0. See `LICENSE` and `LICENSE-DOCS`.
+- Windows CLI steps now use explicit `winget install --id <pkg> -e` form and `Set-ExecutionPolicy … -Force` for the Scoop bootstrap.
+
+### Notes
+- Interactive commands (`gh auth login`) work because child processes inherit stdio — follow the browser prompts as usual.
+- Windows admin steps (`winget install …`) fail if Node was launched from non-Admin PowerShell. Re-run those from an Admin window, or use `--no-run` and run manually.
 
 ## [0.1.0] — 2026-04-14
 
