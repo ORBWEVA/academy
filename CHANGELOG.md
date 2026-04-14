@@ -4,6 +4,22 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-04-14
+
+### Added
+- **`web-build` pack** — 5 quality-audit skills for websites: `web-audit`, `web-perf`, `web-a11y`, `web-copy`, `web-brand`. Positioned as the quality layer on top of generation tools (Anthropic's app factory, Lovable, v0, Bolt). Repo: https://github.com/ORBWEVA/web-build-pack
+- **`ai-media` pack** — 6 skills for AI-generated video/image/voice pipelines via kie.ai: `ai-media-setup`, `ai-media-video` (Veo 3), `ai-media-image` (Nano Banana / Flux), `ai-media-voice` (ElevenLabs), `ai-media-pipeline` (n8n workflow template), `ai-media-cost` (pre-flight budget). Repo: https://github.com/ORBWEVA/ai-media-pack
+- `full` track now includes `web-build-pack` and `ai-media-pack`.
+
+### Changed
+- `marketing` pack removed from manifest (replaced by `ai-media`, which better matches the "automation via AI tools" framing).
+- `web-video` pack removed (replaced by `web-build`, which separates web-quality audits from future video work; video-gen work now lives under `ai-media`).
+- `web-build` pack optionally includes `gtm-skills` (for deeper SEO tooling).
+- `ai-media` pack optionally includes `solo-agents` (for workflow/agent design).
+
+### Notes
+- `loka` pack stays as `status: "planned"` — repo not yet scaffolded.
+
 ## [0.2.0] — 2026-04-14
 
 ### Added

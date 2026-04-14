@@ -13,9 +13,10 @@
     "solo-skills":       { "repo": "ORBWEVA/solo-skills",       "skills": ["solo"] },
     "solo-agents":       { "repo": "ORBWEVA/solo-agents",       "skills": ["agents"] },
 
-    "loka-pack":         { "repo": "ORBWEVA/loka-pack",         "skills": ["loka-integration"],             "status": "planned" },
-    "marketing-pack":    { "repo": "ORBWEVA/marketing-pack",    "skills": ["marketing-agency"],             "status": "planned" },
-    "web-video-pack":    { "repo": "ORBWEVA/web-video-pack",    "skills": ["web-design", "video-editing"],  "status": "planned" }
+    "web-build-pack":    { "repo": "ORBWEVA/web-build-pack",    "skills": ["web-audit", "web-perf", "web-a11y", "web-copy", "web-brand"] },
+    "ai-media-pack":     { "repo": "ORBWEVA/ai-media-pack",     "skills": ["ai-media-setup", "ai-media-video", "ai-media-image", "ai-media-voice", "ai-media-pipeline", "ai-media-cost"] },
+
+    "loka-pack":         { "repo": "ORBWEVA/loka-pack",         "skills": ["loka-integration"], "status": "planned" }
   },
   "tracks": {
     "accelerator": {
@@ -44,29 +45,29 @@
     },
     "full": {
       "label": "Full Academy",
-      "tagline": "All 11 ORBWEVA skill repos — no tradeoffs",
-      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-discovery", "dt-skill", "founder-metrics", "founder-pitch", "founder-ops", "gtm-skills", "solo-skills", "solo-agents"],
+      "tagline": "All ORBWEVA skill repos — no tradeoffs",
+      "required": ["secure-setup", "orbweva-method", "resume-skill", "founder-discovery", "dt-skill", "founder-metrics", "founder-pitch", "founder-ops", "gtm-skills", "solo-skills", "solo-agents", "web-build-pack", "ai-media-pack"],
       "optional": []
     }
   },
   "packs": {
+    "web-build": {
+      "label": "Web Build (Quality Audit Layer)",
+      "tagline": "Audit and improve websites — SEO, perf, accessibility, copy, brand",
+      "required": ["web-build-pack"],
+      "optional": ["gtm-skills"]
+    },
+    "ai-media": {
+      "label": "AI Media",
+      "tagline": "AI-generated video, image, and voice pipelines via kie.ai",
+      "required": ["ai-media-pack"],
+      "optional": ["solo-agents"]
+    },
     "loka": {
       "label": "Loka / LoLA",
       "tagline": "Build a business on the Loka living-textbook + LoLA avatar platform",
       "required": ["loka-pack"],
       "optional": []
-    },
-    "marketing": {
-      "label": "Marketing Agency",
-      "tagline": "Run a one-person (or small team) marketing agency",
-      "required": ["marketing-pack"],
-      "optional": ["solo-skills", "solo-agents"]
-    },
-    "web-video": {
-      "label": "Web + Video Studio",
-      "tagline": "Web design + video editing studio",
-      "required": ["web-video-pack"],
-      "optional": ["solo-skills"]
     }
   },
   "mcpServers": {
