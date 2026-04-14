@@ -9,9 +9,20 @@
   "files": [
     "bin",
     "src",
+    "docs",
     "manifest.json",
-    "README.md"
+    "README.md",
+    "README.ja-JP.md",
+    "README.ko-KR.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md"
   ],
+  "homepage": "https://github.com/ORBWEVA/academy-cli#readme",
+  "bugs": {
+    "url": "https://github.com/ORBWEVA/academy-cli/issues"
+  },
   "keywords": ["orbweva", "academy", "claude-code", "skills"],
   "author": "ORBWEVA",
   "license": "MIT",
