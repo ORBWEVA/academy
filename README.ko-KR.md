@@ -4,6 +4,8 @@
 
 [English](README.md) · [日本語](README.ja-JP.md) · **한국어**
 
+<img src="assets/hero.svg" alt="npx @orbweva/academy — ORBWEVA Academy 설치 관리자" width="720"/>
+
 파운더가 필요한 모든 ORBWEVA Claude Code 스킬을 명령어 하나로 설치.
 
 ```
