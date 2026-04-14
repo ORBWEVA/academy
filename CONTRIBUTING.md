@@ -74,4 +74,4 @@ ls /tmp/academy-test/.claude/skills/
 
 ## Questions
 
-Open an issue at https://github.com/ORBWEVA/academy-cli/issues or ping @orbweva on X.
+Open an issue at https://github.com/ORBWEVA/academy/issues or ping @orbweva on X.

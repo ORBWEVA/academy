@@ -41,7 +41,7 @@ If that also fails, the issue is your network, not the installer. Try via a VPN 
 
 **Rate-limited** — unauthenticated clone is subject to GitHub's IP-based limits. If you've cloned a lot in the last hour, wait 15 minutes or authenticate: `gh auth login` then re-run.
 
-**Repo renamed / made private** — unlikely but possible. Open an issue at https://github.com/ORBWEVA/academy-cli/issues.
+**Repo renamed / made private** — unlikely but possible. Open an issue at https://github.com/ORBWEVA/academy/issues.
 
 ## "Permission denied" writing to `~/.claude/skills`
 
@@ -98,11 +98,11 @@ Set the debug env var and re-run:
 ORBWEVA_DEBUG=1 npx @orbweva/academy@latest
 ```
 
-This prints a full stack trace. Include it when opening an issue at https://github.com/ORBWEVA/academy-cli/issues.
+This prints a full stack trace. Include it when opening an issue at https://github.com/ORBWEVA/academy/issues.
 
 ## Still stuck?
 
 - **Email:** support@orbweva.com
-- **GitHub issues:** https://github.com/ORBWEVA/academy-cli/issues
+- **GitHub issues:** https://github.com/ORBWEVA/academy/issues
 
 For non-installer program-level issues: https://github.com/ORBWEVA/accelerator-template/blob/main/docs/TROUBLESHOOTING.md

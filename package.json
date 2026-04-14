@@ -20,9 +20,9 @@
     "CONTRIBUTING.md",
     "SECURITY.md"
   ],
-  "homepage": "https://github.com/ORBWEVA/academy-cli#readme",
+  "homepage": "https://github.com/ORBWEVA/academy#readme",
   "bugs": {
-    "url": "https://github.com/ORBWEVA/academy-cli/issues"
+    "url": "https://github.com/ORBWEVA/academy/issues"
   },
   "keywords": ["orbweva", "academy", "claude-code", "skills"],
   "author": "ORBWEVA",
@@ -32,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ORBWEVA/academy-cli.git"
+    "url": "https://github.com/ORBWEVA/academy.git"
   }
 }

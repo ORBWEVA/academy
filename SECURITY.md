@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Email **security@orbweva.com** with subject `[academy-cli] <short summary>`. Please **do not** open a public GitHub issue.
+Email **security@orbweva.com** with subject `[academy] <short summary>`. Please **do not** open a public GitHub issue.
 
 We aim to acknowledge within 72 hours.
 
