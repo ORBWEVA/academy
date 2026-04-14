@@ -4,8 +4,6 @@
 
 **English** · [日本語](README.ja-JP.md) · [한국어](README.ko-KR.md)
 
-<img src="assets/hero.svg" alt="npx @orbweva/academy — terminal preview" width="720"/>
-
 One command to install every ORBWEVA Claude Code skill a founder needs.
 
 ```
