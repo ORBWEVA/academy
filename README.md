@@ -145,4 +145,11 @@ To add a track, pack, or skill repo, see [CONTRIBUTING.md](CONTRIBUTING.md). Mos
 
 ## License
 
-[MIT](LICENSE). © 2026 ORBWEVA.
+Dual-licensed to match the ORBWEVA ecosystem:
+
+- **Source code** (`bin/`, `src/`, `manifest.json`) — [MIT](LICENSE)
+- **Documentation and prose** (README files, `docs/`, `CHANGELOG`, etc.) — [CC BY-NC-SA 4.0](LICENSE-DOCS)
+
+Installed skills live in separate ORBWEVA repos, each under their own license (typically CC BY-NC-SA 4.0). This installer does not relicense them.
+
+© 2026 ORBWEVA. Commercial licensing inquiries: legal@orbweva.com.

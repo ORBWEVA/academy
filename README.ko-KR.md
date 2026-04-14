@@ -145,4 +145,11 @@ npx @orbweva/academy@latest
 
 ## 라이선스
 
-[MIT](LICENSE). © 2026 ORBWEVA.
+ORBWEVA 생태계에 맞춘 듀얼 라이선스:
+
+- **소스 코드** (`bin/`, `src/`, `manifest.json`) — [MIT](LICENSE)
+- **문서 및 산문** (README 파일, `docs/`, `CHANGELOG` 등) — [CC BY-NC-SA 4.0](LICENSE-DOCS)
+
+설치되는 스킬은 별도의 ORBWEVA 저장소에 있으며 각자의 라이선스(일반적으로 CC BY-NC-SA 4.0)를 따릅니다. 이 설치 관리자는 재라이선스하지 않습니다.
+
+© 2026 ORBWEVA. 상업적 라이선스 문의: legal@orbweva.com.

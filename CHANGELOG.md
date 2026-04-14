@@ -4,6 +4,9 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
+### Changed
+- Re-licensed to dual MIT + CC BY-NC-SA 4.0 to match the broader ORBWEVA ecosystem. Code is MIT (permissive, contribution-friendly). Docs and prose are CC BY-NC-SA 4.0 (matches skill repos). Full details in `LICENSE` and `LICENSE-DOCS`.
+
 ## [0.1.0] — 2026-04-14
 
 ### Added
