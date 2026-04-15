@@ -4,6 +4,9 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
+### Fixed
+- **Banner V rendering** — narrowed the `V` in the ASCII `ORBWEVA` banner so it no longer reads as `ORBWELA` in terminals that render `█   █` as two parallel vertical bars.
+
 ## [0.3.0] — 2026-04-14
 
 ### Added
