@@ -4,6 +4,9 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
+### Changed
+- Installer success message now explicitly tells users to `/exit` and relaunch Claude Code so newly-installed skills and MCP servers register. The previous "Open Claude Code to use them" wording didn't account for users running the installer from inside an already-open Claude Code session.
+
 ### Fixed
 - **Banner V rendering** — narrowed the `V` in the ASCII `ORBWEVA` banner so it no longer reads as `ORBWELA` in terminals that render `█   █` as two parallel vertical bars.
 

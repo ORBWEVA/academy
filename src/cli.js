@@ -194,7 +194,13 @@ export async function run(argv) {
   await installSkills(selectedRepos, scope, { dryRun: flags.dryRun });
 
   if (flags.skillsOnly || flags.dryRun) {
-    console.log(`\n${c.green('✓')} Skills ${flags.dryRun ? 'would be' : 'are'} installed. Open Claude Code to use them.`);
+    if (flags.dryRun) {
+      console.log(`\n${c.green('✓')} Skills would be installed. (Dry run — nothing changed.)`);
+    } else {
+      console.log(`\n${c.green('✓')} Skills are installed.`);
+      console.log(`\n${c.yellow('⚠  If Claude Code is already running, /exit and relaunch it now.')}`);
+      console.log(c.dim('   New skills only register at startup — your current session won\'t see them.\n'));
+    }
     return;
   }
 
@@ -203,5 +209,8 @@ export async function run(argv) {
   await runCliSetup(os, { assumeYes: flags.yes, interactive });
   await runMcpSetup(manifest.mcpServers, { assumeYes: flags.yes, interactive });
 
-  console.log(`\n${c.green('✓')} Setup complete. Open Claude Code and try ${c.cyan('/discovery:help')} to verify.\n`);
+  console.log(`\n${c.green('✓')} Setup complete.`);
+  console.log(`\n${c.yellow('⚠  If Claude Code is already running, /exit and relaunch it now.')}`);
+  console.log(c.dim('   New skills and MCP servers only register at startup — your current session won\'t see them.\n'));
+  console.log(`Then try ${c.cyan('/discovery:help')} to verify.\n`);
 }
