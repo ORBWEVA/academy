@@ -4,11 +4,24 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
-### Changed
-- Installer success message now explicitly tells users to `/exit` and relaunch Claude Code so newly-installed skills and MCP servers register. The previous "Open Claude Code to use them" wording didn't account for users running the installer from inside an already-open Claude Code session.
+## [0.3.2] — 2026-04-27
+
+### Added
+- **`niche-validator` skill ships with founder-metrics.** Curriculum has referenced `/niche-validator` since the Accelerator templates were authored, but the skill was only resident on Ryan's machine and not in any published repo — so every Accelerator participant who tried `/niche-validator` got "Unknown command" until the mentor walked them through the natural-language workaround. Skill is now distributed via `ORBWEVA/founder-metrics` (single SKILL.md + `commands/niche-validator.md`). Single command auto-detects validate flow (1 niche) vs compare flow (2-3 niches). Discovered during Hector pair-debug 2026-04-24.
+
+### Notes
+- No installer code change required: `installSkills()` already handles bare `commands/*.md` files via `cp(..., { recursive: true })` — only `manifest.json` needed updating to add `niche-validator` to founder-metrics' skills array.
+
+## [0.3.1] — 2026-04-24
 
 ### Fixed
+- **Slash commands now install alongside skills** — previously `installSkills()` only copied each repo's `skills/` directory into `~/.claude/skills/`, silently ignoring the `commands/` directory that ships alongside. That meant commands like `/startup:help`, `/discovery:interview`, and every other slash shortcut returned "Unknown command" even after a clean install. The installer now also mirrors each repo's `commands/<namespace>/` into `~/.claude/commands/<namespace>/`. Discovered during a live pair-debug with an Accelerator participant whose `/startup:help` never fired.
+- **MCP `claude mcp add` calls missing `--` separator** — the generated command was `claude mcp add <name> npx -y @pkg/...`, which modern Claude Code CLIs reject with `error: unknown option '-y'` because `-y` was being parsed as a flag to `claude mcp add` itself, not forwarded to `npx`. Added the `--` separator so the full command is now `claude mcp add <name> -- npx -y @pkg/...`. Every MCP prompt in the interactive flow was affected.
 - **Banner V rendering** — narrowed the `V` in the ASCII `ORBWEVA` banner so it no longer reads as `ORBWELA` in terminals that render `█   █` as two parallel vertical bars.
+
+### Changed
+- Installer success message now explicitly tells users to `/exit` and relaunch Claude Code so newly-installed skills and MCP servers register. The previous "Open Claude Code to use them" wording didn't account for users running the installer from inside an already-open Claude Code session.
+- Per-repo log line now reports both skills and command namespaces copied (e.g., `✓ 1 skill, 1 command namespace`).
 
 ## [0.3.0] — 2026-04-14
 

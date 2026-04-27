@@ -1,6 +1,6 @@
 {
   "name": "@orbweva/academy",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "One-command installer for ORBWEVA Academy — skills, MCP configs, and CLI tool guidance for Claude Code.",
   "type": "module",
   "bin": {

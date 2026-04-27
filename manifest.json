@@ -6,7 +6,7 @@
     "resume-skill":      { "repo": "ORBWEVA/resume-skill",      "skills": ["resume"] },
     "founder-discovery": { "repo": "ORBWEVA/founder-discovery", "skills": ["discovery"] },
     "dt-skill":          { "repo": "ORBWEVA/dt-skill",          "skills": ["design-thinking"] },
-    "founder-metrics":   { "repo": "ORBWEVA/founder-metrics",   "skills": ["startup-metrics"] },
+    "founder-metrics":   { "repo": "ORBWEVA/founder-metrics",   "skills": ["startup-metrics", "niche-validator"] },
     "founder-pitch":     { "repo": "ORBWEVA/founder-pitch",     "skills": ["pitch"] },
     "founder-ops":       { "repo": "ORBWEVA/founder-ops",       "skills": ["hiring", "legal-essentials", "retention"] },
     "gtm-skills":        { "repo": "ORBWEVA/gtm-skills",        "skills": ["geo", "gtm-launch", "seo-toolkit"] },
