@@ -3,7 +3,7 @@ import { promptAndRun, summary } from './exec.js';
 
 function stepsFromManifest(servers) {
   return Object.entries(servers).map(([name, cfg]) => ({
-    cmd: `claude mcp add ${name} ${cfg.cmd}`,
+    cmd: `claude mcp add ${name} -- ${cfg.cmd}`,
     desc: `Add MCP: ${name}`,
     note: cfg.envKey ? `Needs ${cfg.envKey} in your shell env before Claude Code can actually connect.` : null,
   }));
