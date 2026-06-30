@@ -4,6 +4,14 @@ All notable changes to `@orbweva/academy` will be documented here. Format based 
 
 ## [Unreleased]
 
+## [0.3.3] — 2026-06-30
+
+### Added
+- **`pitch-night` skill ships with the installer.** The spoken 3-minute demo-night / pitch-competition skill (`ORBWEVA/pitch-night`) was published and live, but only reachable via manual `git clone` or the `install-skills.sh` curl route — it was never in this npm package's `manifest.json`, so participants who install via `npx @orbweva/academy` (the documented route) could not get it. Now wired into `skillRepos` and into every track that already carries `founder-pitch`: accelerator/mentoring/founder as optional, full as required. Sibling to `founder-pitch` (`pitch` = investor deck; `pitch-night` = the spoken pitch). Surfaced when an Accelerator participant cloned the repo to the wrong folder; the manual route was the only one documented.
+
+### Notes
+- No installer code change required: `installSkills()` already handles each repo's `skills/` + `commands/` directories — only `manifest.json` needed the new entry.
+
 ## [0.3.2] — 2026-04-27
 
 ### Added
